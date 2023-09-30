@@ -17,20 +17,16 @@ public class DestroyObject : MonoBehaviour
             _timer=gameObject.AddComponent<Timer>();
         }
 
-        _timer.TotalTime = Random.Range(5, 20);
+        _timer.TotalTime = 1;
         _timer.Run();
     }
 
-    void DestroyObjectWhenTimeFinished()
+
+    void Update()
     {
         if (_timer.IsFinished)
         {
             Destroy(gameObject);
         }
-    }
-
-    void Update()
-    {
-        DestroyObjectWhenTimeFinished();
     }
 }

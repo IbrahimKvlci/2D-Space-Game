@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2317744110954390114}
   - component: {fileID: 7148004354801817810}
   - component: {fileID: 8136299552051547721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UzayGemisi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7148004354801817810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,4 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2de2db5ea75d44e91547381bb56f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _bulletPrefab: {fileID: 622575148763441548, guid: c0ee33abacc20354fb0999db0eac9072, type: 3}
+  _explosionPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
