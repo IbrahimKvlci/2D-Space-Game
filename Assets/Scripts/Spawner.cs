@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnObjects());
+
     }
 
 
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
         spwanedObject.transform.rotation = Quaternion.identity;
     }
 
-    IEnumerator SpawnObjects()
+    public IEnumerator SpawnObjects()
     {
         for (int i = 0; i < _spawnCount; i++)
         {

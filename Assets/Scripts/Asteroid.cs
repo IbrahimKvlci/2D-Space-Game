@@ -8,8 +8,11 @@ public class Asteroid : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    UIControl _uiControl;
+
     private void Start()
     {
+        _uiControl=GameObject.FindGameObjectWithTag("GameController").GetComponent<UIControl>();
         if (gameObject.GetComponent<Rigidbody2D>()!=null)
         {
             _rb = gameObject.GetComponent<Rigidbody2D>();
@@ -27,6 +30,7 @@ public class Asteroid : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
+            _uiControl.AsteroidDestroyed(gameObject);
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
