@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -76}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3242, y: 121.9851}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &63211124
@@ -387,7 +387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23, y: -32}
+  m_AnchoredPosition: {x: 23, y: 0}
   m_SizeDelta: {x: 343.0265, y: 76}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &735036271
@@ -683,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spaceshipPrefab: {fileID: 306586119468522453, guid: 5620de3dfb1a2b544913ec9697708f61, type: 3}
+  _isGameFinished: 0
 --- !u!4 &954099599
 Transform:
   m_ObjectHideFlags: 0
@@ -710,11 +711,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a78086eb9cf6f41a57c54e295a3fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnObjects:
+  _spawnObjectsPrefab:
   - {fileID: 1653720102741977027, guid: f15b9b9b41e0bb44b835f04bc323b765, type: 3}
   - {fileID: 3833667234415109273, guid: 02a1ad1185fe91649b4c047d1ab7e3f7, type: 3}
   _spawnCount: 10
   _spawnDelay: 0.5
+  _spawnObjects:
+  - {fileID: 1653720102741977027, guid: f15b9b9b41e0bb44b835f04bc323b765, type: 3}
+  - {fileID: 3833667234415109273, guid: 02a1ad1185fe91649b4c047d1ab7e3f7, type: 3}
 --- !u!114 &954099601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1005,7 +1009,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -76}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3242, y: 121.9851}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2095228937

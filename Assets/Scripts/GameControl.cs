@@ -12,6 +12,8 @@ public class GameControl : MonoBehaviour
 
     UIControl _uiControl;
 
+    public bool _isGameFinished=false;
+
     private void Awake()
     {
         GetScreenSize.Init();
@@ -25,9 +27,21 @@ public class GameControl : MonoBehaviour
 
     public void StartGame()
     {
+        _isGameFinished=false;
         _uiControl.GameStarted();
         _spaceShip = Instantiate(_spaceshipPrefab);
         _spaceShip.transform.position = new Vector3(0, GetScreenSize.Bottom + 1.5f, 0);
         StartCoroutine(_spawner.SpawnObjects());
+    }
+
+    public  void FinishGame()
+    {
+        _isGameFinished=true;
+        foreach (var asteroid in _spawner._spawnObjects)
+        {
+            asteroid.GetComponent<Asteroid>().DestroyAsteroid();
+        }
+        _spawner._spawnObjects.Clear();
+        _uiControl.GameOver();
     }
 }

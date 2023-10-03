@@ -13,11 +13,14 @@ public class UIControl : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI _scoreText;
 
+    Spawner _spawner;
+
     int _score;
 
     void Start()
     {
         _gameOverText.gameObject.SetActive(false);
+        _spawner= GetComponent<Spawner>();  
     }
 
     public void GameStarted()
@@ -25,6 +28,13 @@ public class UIControl : MonoBehaviour
         _gameNameText.gameObject.SetActive(false);
         _gameOverText.gameObject.SetActive(false);
         _playButton.gameObject.SetActive(false);
+    }
+
+    public void GameOver()
+    {
+        _gameOverText.gameObject.SetActive(true);
+        _playButton.gameObject.SetActive(true);
+
     }
 
     void UpdateScore()

@@ -9,10 +9,18 @@ public class SpaceshipControl : MonoBehaviour
 
     [SerializeField] const float _speed=7;
 
+    GameControl _gameControl;
+
+    private void Start()
+    {
+        _gameControl = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioControl>().FireAudio();
             Vector3 bulletPos = gameObject.transform.position+Vector3.up;
             Instantiate(_bulletPrefab,bulletPos,Quaternion.identity);
         }
@@ -35,6 +43,8 @@ public class SpaceshipControl : MonoBehaviour
     {
         if (collision.transform.tag == "Asteroid")
         {
+            GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioControl>().ShipExplosionAudio();
+            _gameControl.FinishGame();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
